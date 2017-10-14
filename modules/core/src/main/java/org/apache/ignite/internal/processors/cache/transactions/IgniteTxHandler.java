@@ -1266,11 +1266,7 @@ public class IgniteTxHandler {
         else
             sendReply(nodeId, req, true, null);
         
-        IgniteInternalTx tx0 = ctx.tm().tx(req.version());
-        
-        IgniteInternalTx nearTx0 = ctx.tm().nearTx(req.version());
-
-        assert req.txState() != null || tx0 == null && nearTx0 == null : req + " tx=" + tx0 + " nearTx=" + nearTx0;
+        assert req.txState() != null || dhtTx == null && nearTx == null : req + " tx=" + dhtTx + " nearTx=" + nearTx;
     }
 
     /**
