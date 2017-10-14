@@ -1270,7 +1270,7 @@ public class IgniteTxHandler {
         
         IgniteInternalTx nearTx0 = ctx.tm().nearTx(req.version());
 
-        assert req.txState() != null || tx0 == null && nearTx0 == null) : req + " tx=" + tx0 + " nearTx=" + nearTx0;
+        assert req.txState() != null || tx0 == null && nearTx0 == null : req + " tx=" + tx0 + " nearTx=" + nearTx0;
     }
 
     /**
